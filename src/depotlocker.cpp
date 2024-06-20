@@ -47,8 +47,8 @@ ReturnValue DepotLocker::queryAdd(int32_t index, const Thing& thing, uint32_t co
 	if (actorPlayer) {
 		actorPlayer->setLastDepotId(depotId);
 	}
-
-	return RETURNVALUE_NOTENOUGHROOM;
+	
+	return Container::queryAdd(index, thing, count, flags, actor);
 }
 
 ReturnValue DepotLocker::queryRemove(const Thing& thing, uint32_t count, uint32_t flags, Creature* actor /*= nullptr */) const
